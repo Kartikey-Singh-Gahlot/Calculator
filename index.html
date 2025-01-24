@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <h1 id="heading">Get Your Solutions Here</h1>
+
+    <div id="calcontainer">
+          <div id="calcbody">
+                <input id="screen" type="text" >
+                     
+
+                <div id="utilities">
+                      <button id="clear" onclick="clr()">CLear</button>
+                </div>
+
+                <div id="operators">
+                     <button id="add"  onclick="pressed('+')">+</button>
+                     <button onclick="pressed('-')">-</button>
+                     <button onclick="pressed('/')">/</button>
+                     <button id="eql" onclick="pressed('x')">x</button>
+                </div>
+ 
+                <div id="buttonarea">
+                      <button class="mainbtn" onclick="pressed(1)">1</button>
+                      <button class="mainbtn" onclick="pressed(2)">2</button>
+                      <button class="mainbtn" onclick="pressed(3)">3</button>
+                      <button class="mainbtn" onclick="pressed(4)">4</button>
+                      <button class="mainbtn" onclick="pressed(5)">5</button>
+                      <button class="mainbtn" onclick="pressed(6)">6</button>
+                      <button class="mainbtn" onclick="pressed(7)">7</button>
+                      <button class="mainbtn" onclick="pressed(8)">8</button>
+                      <button class="mainbtn" onclick="pressed(9)">9</button>
+                      <button class="mainbtn" onclick="pressed(0)">0</button>
+                      <button id="enter" onclick="result()">Enter</button>
+                </div>
+
+          </div>
+    </div>
+
+    <script src="script.js">
+    </script>
+
+</body>
+</html>
