@@ -1,58 +1,25 @@
-
-const screen= document.getElementById("screen");
-const btns= document.querySelectorAll(".mainbtn");
-const eql=document.getElementById("eql");
-const add=document.getElementById("add");
-
-let state="off";
+const screen= document.querySelector('input');
+const aud= document.querySelector('audio');
+screen.disabled =true;
 
 
-
-
-function result(){
-
-
-  let str= screen.value;
-
-  if(str.includes("+")){
-
-   let idx=str.indexOf("+");
-   let a=Number(str.slice(0,idx));
-   let b=Number(str.slice(idx+1, str.length));
-   screen.value=a+b;
-  }
-
-  if(str.includes("-")){
-    let idx=str.indexOf("-");
-   let a=Number(str.slice(0,idx));
-   let b=Number(str.slice(idx+1, str.length));
-   screen.value=a-b;
-  }
-
-
-  if(str.includes("x")){
-    let idx=str.indexOf("x");
-   let a=Number(str.slice(0,idx));
-   let b=Number(str.slice(idx+1, str.length));
-   screen.value=a*b;
-  }
-
-  if(str.includes("/")){
-    let idx=str.indexOf("/");
-   let a=Number(str.slice(0,idx));
-   let b=Number(str.slice(idx+1, str.length));
-   screen.value=a/b;
-  }
-
+function pressed(val){
+    screen.value +=val;
+    aud.play();
 }
 
-
-function pressed(num){
-  screen.value+= num;
+function result(){
+  if(screen.value.length != 0){
+    screen.value = eval(screen.value);
+  }
 }
 
 function clr(){
-  screen.value="";
+    screen.value = "";
+}
+
+function del(){
+  screen.value = screen.value.slice(0,screen.value.length-1);
 }
 
 
